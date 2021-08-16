@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import infra.creport_pb2 as creport__pb2
+import proto.creport_pb2 as creport__pb2
 
 
 class CreportStub(object):

@@ -1,5 +1,5 @@
 import grpc
-from infra import creport_pb2 as pb2, creport_pb2_grpc as pb2_grpc
+from proto import creport_pb2 as pb2, creport_pb2_grpc as pb2_grpc
 
 
 class CreportClient(object):
