@@ -29,5 +29,5 @@ class CreportClient(object):
 
 if __name__ == '__main__':
     client = CreportClient()
-    result = client.get_url(message="잡플래닛")
+    result = client.get_url(message="큐피스트")
     print(f'{result}')

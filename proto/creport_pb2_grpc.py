@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import proto.creport_pb2 as creport__pb2
+from proto import creport_pb2 as proto_dot_creport__pb2
 
 
 class CreportStub(object):
@@ -16,8 +16,8 @@ class CreportStub(object):
         """
         self.GetServerResponse = channel.unary_unary(
                 '/creport.Creport/GetServerResponse',
-                request_serializer=creport__pb2.Message.SerializeToString,
-                response_deserializer=creport__pb2.MessageResponse.FromString,
+                request_serializer=proto_dot_creport__pb2.Message.SerializeToString,
+                response_deserializer=proto_dot_creport__pb2.MessageResponse.FromString,
                 )
 
 
@@ -38,8 +38,8 @@ def add_CreportServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'GetServerResponse': grpc.unary_unary_rpc_method_handler(
                     servicer.GetServerResponse,
-                    request_deserializer=creport__pb2.Message.FromString,
-                    response_serializer=creport__pb2.MessageResponse.SerializeToString,
+                    request_deserializer=proto_dot_creport__pb2.Message.FromString,
+                    response_serializer=proto_dot_creport__pb2.MessageResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -63,7 +63,7 @@ class Creport(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/creport.Creport/GetServerResponse',
-            creport__pb2.Message.SerializeToString,
-            creport__pb2.MessageResponse.FromString,
+            proto_dot_creport__pb2.Message.SerializeToString,
+            proto_dot_creport__pb2.MessageResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -15,6 +15,9 @@ message Message{
 }
 
 message MessageResponse{
- string message = 1;
- bool received = 2;
+ string j_score = 1;
+ string b_score = 2;
+ string invest_money = 3;
+ string sales = 4;
+ bool received = 5;
 }
